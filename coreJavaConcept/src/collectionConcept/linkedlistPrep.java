@@ -6,8 +6,11 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class linkedlistPrep {
+	private static final boolean String = false;
+
 	public static void main(String[] args) {
 		// Mutable list
 		ArrayList<String> arrList = new ArrayList<>();
@@ -69,6 +72,19 @@ public class linkedlistPrep {
 		arr1List.addLast(3);
 		arr1List.removeLast();
 		System.out.println(arr1List);
+
+		// Copy on write array list:::
+		List<String> copyList = new CopyOnWriteArrayList<String>();
+		copyList.add("Milk");
+		copyList.add("Pen");
+		copyList.add("Fruits");
+		copyList.add("Tea");
+		for (String items : copyList) {
+			if (items == "Milk") {
+				copyList.add("EGG");
+			}
+		}
+		System.out.println(copyList);
 
 	}
 }
