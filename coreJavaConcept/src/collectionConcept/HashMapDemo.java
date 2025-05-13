@@ -36,12 +36,17 @@ public class HashMapDemo {
 
 		String[] arr= {"Orange","Apple","Bannana"};
 		List<String> list =Arrays.asList(arr);
-		
+		//list.set(0, "Rahul");
+		list.remove(0);
+		System.out.println(list);
+//		
 		List<String> list1=List.of("r","c","v");
-		
+//		list1.add("a");
+//		System.out.println(list1);
 		
 		LinkedList<String> linkList=new LinkedList<>(Arrays.asList("r","c","v"));
 		linkList.add("a");
-		System.out.println();
+		linkList.remove(0);
+		System.out.println(linkList);
 	}
 }
