@@ -12,7 +12,7 @@ public class comparatorCompairable {
 		list.add("mango");
 		//list.sort(null);
 		list.sort((a,b)->b.length()-a.length());
-		System.out.println(list);
+		System.out.println("list"+list);
 		
 
 	}
