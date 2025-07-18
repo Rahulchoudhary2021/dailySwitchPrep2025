@@ -2,7 +2,7 @@ package designPatternJava;
 
 import java.io.Serializable;
 
-public class singletonBreak implements Serializable {
+public class singletonBreak implements Serializable,Cloneable {
 	private static singletonBreak instance;
 
 	private singletonBreak() {
@@ -28,5 +28,8 @@ public class singletonBreak implements Serializable {
 	
 	protected Object readResolve() {
 		return instance;
+	}
+	protected Object clone() throws CloneNotSupportedException {
+		throw new CloneNotSupportedException("Clone not allowed !");
 	}
 }

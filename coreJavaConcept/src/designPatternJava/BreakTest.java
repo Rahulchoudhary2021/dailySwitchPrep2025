@@ -13,7 +13,14 @@ public class BreakTest {
 
 		singletonBreak s2 = singletonBreak.getInstance();
 		System.out.println(s2.hashCode());
+		
 
+        try {
+            singletonBreak s3 = (singletonBreak) s1.clone();  // ✅ throws CloneNotSupportedException
+            System.out.println(s3.hashCode());
+        } catch (CloneNotSupportedException e) {
+            System.out.println("Cloning blocked: " + e.getMessage());
+        }
 //		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("D:\\Rahul_Data_Transfer"))) {
 //			oos.writeObject(s1);
 //			ObjectInputStream ooi = new ObjectInputStream(new FileInputStream("D:\\Rahul_Data_Transfer"));
